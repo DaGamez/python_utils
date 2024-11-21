@@ -43,7 +43,7 @@ def process_files(input_folder, output_folder):
         os.makedirs(output_folder)
 
     for filename in os.listdir(input_folder):
-        input_path = input_folder
+        input_path = os.path.join(input_folder, filename)
         if filename.lower().endswith('.heic'):
             output_path = os.path.join(output_folder, f"{os.path.splitext(filename)[0]}.jpg")
             convert_heic_to_jpg(input_path, output_path)
